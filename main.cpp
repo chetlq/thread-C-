@@ -4,7 +4,7 @@
 #include <windows.h>
 
 void produce(MyQueue<std::string>& q) {
-	HANDLE handle;
+    HANDLE handle;
     WIN32_FIND_DATA findData;
  
     handle = FindFirstFile("D:\\myfolder\*.txt", &findData);
@@ -15,7 +15,7 @@ void produce(MyQueue<std::string>& q) {
         q.push(findData.cFileName);
     }
     while (FindNextFile(handle, &findData) != 0);
-	q.flag=false;
+    q.flag=false;
     FindClose(handle);  
 }
 
