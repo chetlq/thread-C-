@@ -22,7 +22,7 @@ public:
 
     T pop(void)
     {
-		if(queue_.empty()&& !flag) return "";
+	if(queue_.empty()&& !flag) return "";
         std::unique_lock<std::mutex> mlock(mutex_);
         while(queue_.empty() )
         {
