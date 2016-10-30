@@ -26,9 +26,7 @@ void consume(MyQueue<std::string>& q, int& count) {
 		ifstream file(item, ios::binary|ios::ate);
 		// print current position (equal file size in bytes)
 		std::cout << file.tellg();
-		std::unique_lock<std::mutex> mlock(mutex_);
-			count++;
-		mlock.unlock();
+		count++;
 	}
   }
 }
