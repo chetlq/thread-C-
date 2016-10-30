@@ -20,7 +20,6 @@ void produce(MyQueue<std::string>& q) {
 }
 
 void consume(MyQueue<std::string>& q, int& count) {
-	std::mutex mutex_;
 	while((std::string item = q.pop()).length()>0)
 	{
 		ifstream file(item, ios::binary|ios::ate);
